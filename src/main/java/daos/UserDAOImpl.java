@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.util.List;
 
-public class UserDAOGenericImpl implements UserDAO {
+public class UserDAOImpl implements UserDAO {
     @Override
     public String getEntityName() {
         return User.class.getSimpleName();

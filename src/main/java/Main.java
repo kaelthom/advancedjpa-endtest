@@ -1,7 +1,7 @@
 import daos.CharacterDAO;
 import daos.CharacterDaoImpl;
 import daos.EMFSingleton;
-import daos.UserDAOGenericImpl;
+import daos.UserDAOImpl;
 import model.Character;
 import model.*;
 
@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = EMFSingleton.getInstance();
 
-        UserDAOGenericImpl userDAO = new UserDAOGenericImpl();
+        UserDAOImpl userDAO = new UserDAOImpl();
         userDAO.create(new User("user1@gmail.com", "user1"));
 
         CharacterDAO characterDAO = new CharacterDaoImpl();
@@ -29,10 +29,10 @@ public class Main {
 
         List<Character> orcOfUser1 = characterDAO.findCharactersByName("orcOfUser1");
 
-        orcOfUser1.get(0).setHealth(10);
-        characterDAO.update(orcOfUser1.get(0));
         if (!orcOfUser1.isEmpty()) {
             Character orc = orcOfUser1.get(0);
+            orc.setHealth(10);
+            characterDAO.update(orc);
             Item item1 = new Item(new LevelElementId("item1", 2), 10, Color.BLUE);
             EntityManager em = EMFSingleton.getInstance().createEntityManager();
             EntityTransaction transaction = em.getTransaction();
