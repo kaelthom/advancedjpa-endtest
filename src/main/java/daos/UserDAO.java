@@ -2,7 +2,7 @@ package daos;
 
 import model.User;
 
-public interface UserDAO extends GenericDao<User, Long> {
+public interface UserDAO extends GenericDaoImpl<User, Long> {
 
     User findUsersByEmail(String email);
 }

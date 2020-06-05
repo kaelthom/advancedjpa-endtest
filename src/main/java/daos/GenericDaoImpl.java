@@ -1,11 +1,5 @@
 package daos;
 
-import com.querydsl.jpa.JPQLQuery;
-import com.querydsl.jpa.impl.JPAQuery;
-import model.Character;
-import model.QUser;
-import model.User;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -13,32 +7,19 @@ import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoImpl implements UserDAO {
+public interface GenericDaoImpl<T, K> {
 
-    static EntityManagerFactory emf = EMFSingleton.getInstance();
+    EntityManagerFactory emf = EMFSingleton.getInstance();
 
-    @Override
-    public User findUsersByEmail(String email) {
+    default List<T> findAll() {
         EntityManager em = null;
-        User user = null;
-
+        List<T> entities = new ArrayList<>();
         try {
             em = emf.createEntityManager();
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
-            QUser qUser = QUser.user;
-            JPQLQuery<User> query = new JPAQuery<>(em);
-            List<User> users = query.from(qUser)
-                    .where(qUser.email.eq(email))
-                    .fetch();
-            if (users.isEmpty()) {
-                System.out.println("no users found with email : " + email);
-            } else if (users.size() == 1) {
-                user = users.get(0);
-            } else {
-                System.out.println("multiple users with email " + email + ", duplicates, taking the first one");
-                user = users.get(0);
-            }
+            Query query = em.createQuery("from " + getEntityName() + " a");
+            entities = query.getResultList();
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,20 +28,19 @@ public class UserDaoImpl implements UserDAO {
                 em.close();
             }
         }
-        return user;
+        return entities;
     }
 
-    @Override
-    public List<User> findAll() {
+    abstract String getEntityName();
+
+    default T findOne(K id) {
         EntityManager em = null;
-        List<User> users = new ArrayList<>();
+        T entity = null;
         try {
             em = emf.createEntityManager();
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
-            Query query = em.createQuery("from User a");
-            users = query.getResultList();
-            transaction.commit();
+            entity = em.find(getEntityClass(), id);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -68,30 +48,12 @@ public class UserDaoImpl implements UserDAO {
                 em.close();
             }
         }
-        return users;
+        return entity;
     }
 
-    @Override
-    public User findOne(Long id) {
-        EntityManager em = null;
-        User user = null;
-        try {
-            em = emf.createEntityManager();
-            EntityTransaction transaction = em.getTransaction();
-            transaction.begin();
-            user = em.find(User.class, id);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (em != null && em.isOpen()) {
-                em.close();
-            }
-        }
-        return user;
-    }
+    abstract Class<T> getEntityClass();
 
-    @Override
-    public void update(User entity) {
+    default void update(T entity) {
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
@@ -108,8 +70,7 @@ public class UserDaoImpl implements UserDAO {
         }
     }
 
-    @Override
-    public void delete(User entity) {
+    default void delete(T entity) {
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
@@ -126,14 +87,13 @@ public class UserDaoImpl implements UserDAO {
         }
     }
 
-    @Override
-    public void deleteByKey(Long id) {
+    default void deleteByKey(K id) {
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
-            em.remove(em.find(Character.class, id));
+            em.remove(em.find(getEntityClass(), id));
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -144,8 +104,7 @@ public class UserDaoImpl implements UserDAO {
         }
     }
 
-    @Override
-    public void create(User entity) {
+    default void create(T entity) {
         EntityManager em = null;
         try {
             em = emf.createEntityManager();
@@ -161,4 +120,5 @@ public class UserDaoImpl implements UserDAO {
             }
         }
     }
+
 }

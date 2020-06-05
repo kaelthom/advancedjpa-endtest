@@ -1,4 +1,7 @@
-import daos.*;
+import daos.CharacterDAO;
+import daos.CharacterDaoImpl;
+import daos.EMFSingleton;
+import daos.UserDAOGenericImpl;
 import model.Character;
 import model.*;
 
@@ -11,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = EMFSingleton.getInstance();
 
-        UserDAO userDAO = new UserDaoImpl();
+        UserDAOGenericImpl userDAO = new UserDAOGenericImpl();
         userDAO.create(new User("user1@gmail.com", "user1"));
 
         CharacterDAO characterDAO = new CharacterDaoImpl();
