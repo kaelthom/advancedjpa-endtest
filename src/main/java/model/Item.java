@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -15,10 +15,10 @@ public class Item extends LevelElement {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(joinColumns = {
-            @JoinColumn(name = "NAME"),
-            @JoinColumn(name = "LEVEL")},
-            inverseJoinColumns = @JoinColumn(name = "CHARACTERS"))
-    private List<Character> characters = new ArrayList<>();
+            @JoinColumn(name = "LEVEL"),
+            @JoinColumn(name = "NAME")},
+            inverseJoinColumns = @JoinColumn(name = "CHARACTER_ID"))
+    private Set<Character> characters = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
     private Color color;
@@ -35,4 +35,6 @@ public class Item extends LevelElement {
         this.durability = durability;
         this.color = color;
     }
+
+
 }

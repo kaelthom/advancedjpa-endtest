@@ -1,23 +1,19 @@
-import daos.CharacterDAO;
-import daos.CharacterDaoImpl;
-import daos.EMFSingleton;
-import daos.UserDAOImpl;
+import daos.*;
 import model.Character;
 import model.*;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory emf = EMFSingleton.getInstance();
+        UserDaoImpl userDAO = new UserDaoImpl();
+        CharacterDAO characterDAO = new CharacterDaoImpl();
+        LevelElementDao levelElementDao = new LevelElementDaoImpl();
 
-        UserDAOImpl userDAO = new UserDAOImpl();
         userDAO.create(new User("user1@gmail.com", "user1"));
 
-        CharacterDAO characterDAO = new CharacterDaoImpl();
 
         User user1 = userDAO.findUsersByEmail("user1@gmail.com");
         if (user1 != null) {
@@ -29,33 +25,34 @@ public class Main {
 
         List<Character> orcOfUser1 = characterDAO.findCharactersByName("orcOfUser1");
 
+        Item item1 = new Item(new LevelElementId("item1", 10), 10, Color.BLUE);
+        levelElementDao.create(item1);
+        item1 = (Item) levelElementDao.findOne(new LevelElementId("item1", 10));
         if (!orcOfUser1.isEmpty()) {
             Character orc = orcOfUser1.get(0);
             orc.setHealth(10);
             characterDAO.update(orc);
-            Item item1 = new Item(new LevelElementId("item1", 2), 10, Color.BLUE);
-            EntityManager em = EMFSingleton.getInstance().createEntityManager();
-            EntityTransaction transaction = em.getTransaction();
-            transaction.begin();
-            em.persist(item1);
-            transaction.commit();
-            em.close();
-
-            em = EMFSingleton.getInstance().createEntityManager();
-            em.close();
-            characterDAO.update(orc);
-
-            em = EMFSingleton.getInstance().createEntityManager();
-            Item item2 = em.find(Item.class, new LevelElementId("item1", 2));
-            item2.getCharacters().add(orc);
-            transaction = em.getTransaction();
-            transaction.begin();
-            em.persist(item2);
-            transaction.commit();
-            em.close();
-
+            item1.getCharacters().clear();
+            item1.getCharacters().add(orc);
+            levelElementDao.update(item1);
         }
 
+        levelElementDao.create(new Spell(new LevelElementId("spell1", 2), 30, 20));
+
+        Item item2 = new Item(new LevelElementId("item2", 10), 10, Color.BLUE);
+        levelElementDao.create(item2);
+        item2 = (Item) levelElementDao.findOne(new LevelElementId("item2", 10));
+        characterDAO.create(new Wizard("wizardOfUser1", user1));
+        List<Character> wizardsOfUser1 = characterDAO.findCharactersByName("wizardOfUser1");
+        if (!wizardsOfUser1.isEmpty()) {
+            Character wizardOfUser1 = wizardsOfUser1.get(0);
+            item1.getCharacters().clear();
+            item2.getCharacters().add(wizardOfUser1);
+            levelElementDao.update(item2);
+            item1.getCharacters().clear();
+            item1.getCharacters().add(wizardOfUser1);
+            levelElementDao.update(item1);
+        }
         emf.close();
 
     }

@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -20,8 +21,8 @@ public class Character {
     private int health;
     private int strength;
     private int level;
-    @ManyToMany(mappedBy = "characters")
-    private List<Item> items;
+    @ManyToMany(mappedBy = "characters", fetch = FetchType.LAZY)
+    private Set<Item> items;
     @ManyToOne
     private User user;
 
@@ -31,5 +32,18 @@ public class Character {
     public Character(String name, User user) {
         this.name = name;
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Character)) return false;
+        Character character = (Character) o;
+        return getId() == character.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

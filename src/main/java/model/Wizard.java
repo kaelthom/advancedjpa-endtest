@@ -11,6 +11,9 @@ import javax.persistence.Entity;
 public class Wizard extends Character {
     private int magic;
 
+    public Wizard() {
+    }
+
     public Wizard(String name, User user) {
         super(name, user);
     }

@@ -21,175 +21,97 @@
     <schema id="13" parent="1" name="SYSSTAT"/>
     <table id="14" parent="4" name="CHARACTER_TABLE"/>
     <table id="15" parent="4" name="ITEM"/>
-    <table id="16" parent="4" name="LEVELELEMENT"/>
-    <table id="17" parent="4" name="ORC"/>
-    <table id="18" parent="4" name="SPELL"/>
-    <table id="19" parent="4" name="USER_TABLE"/>
-    <table id="20" parent="4" name="WIZARD"/>
-    <column id="21" parent="14" name="ID">
+    <table id="16" parent="4" name="ITEM_CHARACTER_TABLE"/>
+    <table id="17" parent="4" name="LEVELELEMENT"/>
+    <table id="18" parent="4" name="ORC"/>
+    <table id="19" parent="4" name="SPELL"/>
+    <table id="20" parent="4" name="USER_TABLE"/>
+    <table id="21" parent="4" name="WIZARD"/>
+    <column id="22" parent="14" name="ID">
       <Position>1</Position>
       <DataType>BIGINT|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="14" name="HEALTH">
+    <column id="23" parent="14" name="HEALTH">
       <Position>2</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="14" name="LEVEL">
+    <column id="24" parent="14" name="LEVEL">
       <Position>3</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="14" name="NAME">
+    <column id="25" parent="14" name="NAME">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="25" parent="14" name="STRENGTH">
+    <column id="26" parent="14" name="STRENGTH">
       <Position>5</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="14" name="USER_ID">
+    <column id="27" parent="14" name="USER_ID">
       <Position>6</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="27" parent="14" name="SQL200603175533100">
+    <index id="28" parent="14" name="SQL200606161605000">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="28" parent="14" name="SQL200603175533100">
+    <index id="29" parent="14" name="SQL200606161605130">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USER_ID</ColNames>
+    </index>
+    <key id="30" parent="14" name="SQL200606161605000">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="29" parent="15" name="COLOR">
-      <Position>1</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="30" parent="15" name="DURABILITY">
-      <Position>2</Position>
-      <DataType>INTEGER|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="31" parent="15" name="LEVEL">
-      <Position>3</Position>
-      <DataType>INTEGER|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="15" name="NAME">
-      <Position>4</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="33" parent="15" name="SQL200603175533130">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>LEVEL
-NAME</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="34" parent="15" name="SQL200603175533130">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>LEVEL
-NAME</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="35" parent="16" name="LEVEL_ELEMENT_TYPE">
-      <Position>1</Position>
-      <DataType>VARCHAR(31)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="36" parent="16" name="LEVEL">
-      <Position>2</Position>
-      <DataType>INTEGER|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="37" parent="16" name="NAME">
-      <Position>3</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="38" parent="16" name="SQL200603180644020">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>LEVEL
-NAME</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="39" parent="16" name="SQL200603180644020">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>LEVEL
-NAME</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="40" parent="17" name="RAGE">
-      <Position>1</Position>
-      <DataType>INTEGER|4s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="41" parent="17" name="ID">
-      <Position>2</Position>
-      <DataType>BIGINT|-5s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="42" parent="17" name="SQL200603180644050">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <index id="43" parent="17" name="SQL200603180644210">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-    </index>
-    <key id="44" parent="17" name="SQL200603180644050">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="45" parent="17" name="FK94XA8GVQI9EPD0ETWGHT1J5SP">
-      <ColNames>ID</ColNames>
-      <RefTableName>CHARACTER_TABLE</RefTableName>
-      <RefKeyName>SQL200603175533100</RefKeyName>
+    <foreign-key id="31" parent="14" name="FK34VAJS5017S2JGMWI8HOVPNO8">
+      <ColNames>USER_ID</ColNames>
+      <RefTableName>USER_TABLE</RefTableName>
+      <RefKeyName>SQL200603180644080</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="46" parent="18" name="COST">
+    <column id="32" parent="15" name="COLOR">
       <Position>1</Position>
-      <DataType>INTEGER|4s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="47" parent="18" name="DAMAGE">
+    <column id="33" parent="15" name="DURABILITY">
       <Position>2</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="48" parent="18" name="LEVEL">
+    <column id="34" parent="15" name="LEVEL">
       <Position>3</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="18" name="NAME">
+    <column id="35" parent="15" name="NAME">
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="50" parent="18" name="SQL200603180644060">
+    <index id="36" parent="15" name="SQL200606161605040">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>LEVEL
 NAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="51" parent="18" name="SQL200603180644220">
+    <index id="37" parent="15" name="SQL200606161605150">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>LEVEL
 NAME</ColNames>
     </index>
-    <key id="52" parent="18" name="SQL200603180644060">
+    <key id="38" parent="15" name="SQL200606161605040">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>LEVEL
 NAME</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="53" parent="18" name="FKJI8S3CY86STOM79HUB9SWIQ9G">
+    <foreign-key id="39" parent="15" name="FKCQOF7MGAEBGGMJR27CMDUDMK5">
       <ColNames>LEVEL
 NAME</ColNames>
       <RefTableName>LEVELELEMENT</RefTableName>
@@ -197,54 +119,194 @@ NAME</ColNames>
       <RefColNames>LEVEL
 NAME</RefColNames>
     </foreign-key>
-    <column id="54" parent="19" name="ID">
-      <Position>1</Position>
-      <DataType>BIGINT|-5s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="55" parent="19" name="EMAIL">
-      <Position>2</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <column id="56" parent="19" name="LOGIN">
-      <Position>3</Position>
-      <DataType>VARCHAR(255)|12s</DataType>
-    </column>
-    <index id="57" parent="19" name="SQL200603180644080">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="58" parent="19" name="SQL200603180644080">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="59" parent="20" name="MAGIC">
+    <column id="40" parent="16" name="NAME">
       <Position>1</Position>
       <DataType>INTEGER|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="60" parent="20" name="ID">
+    <column id="41" parent="16" name="LEVEL">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="16" name="CHARACTERS">
+      <Position>3</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="43" parent="16" name="SQL200606161605170">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NAME
+LEVEL</ColNames>
+    </index>
+    <index id="44" parent="16" name="SQL200606161605151">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CHARACTERS</ColNames>
+    </index>
+    <foreign-key id="45" parent="16" name="FK7NA63T4DHKF0VNIQCBAD1EP1S">
+      <ColNames>NAME
+LEVEL</ColNames>
+      <RefTableName>ITEM</RefTableName>
+      <RefKeyName>SQL200603175533130</RefKeyName>
+      <RefColNames>LEVEL
+NAME</RefColNames>
+    </foreign-key>
+    <foreign-key id="46" parent="16" name="FKPX0TQCFULOPR6V53OAQRLWKS4">
+      <ColNames>CHARACTERS</ColNames>
+      <RefTableName>CHARACTER_TABLE</RefTableName>
+      <RefKeyName>SQL200603175533100</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="47" parent="17" name="LEVEL_ELEMENT_TYPE">
+      <Position>1</Position>
+      <DataType>VARCHAR(31)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="17" name="LEVEL">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="17" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="17" name="SQL200606161605060">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LEVEL
+NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="17" name="SQL200606161605060">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LEVEL
+NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="18" name="RAGE">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="18" name="ID">
       <Position>2</Position>
       <DataType>BIGINT|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="61" parent="20" name="SQL200603180644100">
+    <index id="54" parent="18" name="SQL200606161605070">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="62" parent="20" name="SQL200603180644221">
+    <index id="55" parent="18" name="SQL200606161605180">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
     </index>
-    <key id="63" parent="20" name="SQL200603180644100">
+    <key id="56" parent="18" name="SQL200606161605070">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="64" parent="20" name="FKB1JEQRNLBJU5S44J3YQI59BW5">
+    <foreign-key id="57" parent="18" name="FK94XA8GVQI9EPD0ETWGHT1J5SP">
+      <ColNames>ID</ColNames>
+      <RefTableName>CHARACTER_TABLE</RefTableName>
+      <RefKeyName>SQL200603175533100</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="58" parent="19" name="COST">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="19" name="DAMAGE">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="19" name="LEVEL">
+      <Position>3</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="19" name="NAME">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="62" parent="19" name="SQL200606161605090">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LEVEL
+NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="63" parent="19" name="SQL200606161605181">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LEVEL
+NAME</ColNames>
+    </index>
+    <key id="64" parent="19" name="SQL200606161605090">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LEVEL
+NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="19" name="FKJI8S3CY86STOM79HUB9SWIQ9G">
+      <ColNames>LEVEL
+NAME</ColNames>
+      <RefTableName>LEVELELEMENT</RefTableName>
+      <RefKeyName>SQL200603180644020</RefKeyName>
+      <RefColNames>LEVEL
+NAME</RefColNames>
+    </foreign-key>
+    <column id="66" parent="20" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="20" name="EMAIL">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <column id="68" parent="20" name="LOGIN">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+    </column>
+    <index id="69" parent="20" name="SQL200606161605110">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="20" name="SQL200606161605110">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="71" parent="21" name="MAGIC">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="21" name="ID">
+      <Position>2</Position>
+      <DataType>BIGINT|-5s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="73" parent="21" name="SQL200606161605120">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="74" parent="21" name="SQL200606161605190">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+    </index>
+    <key id="75" parent="21" name="SQL200606161605120">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="76" parent="21" name="FKB1JEQRNLBJU5S44J3YQI59BW5">
       <ColNames>ID</ColNames>
       <RefTableName>CHARACTER_TABLE</RefTableName>
       <RefKeyName>SQL200603175533100</RefKeyName>
