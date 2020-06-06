@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6f71b1-1315-45bd-94b3-981c3b55503c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/daos/LevelElementDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daos/LevelElementDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/CharacterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/CharacterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/GenericDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/GenericDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daos/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daos/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/LevelElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LevelElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/daos/CharacterDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/daos/CharacterDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/daos/GenericDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/daos/GenericDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/daos/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/daos/UserDAO.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/daos/GenericDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="136">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -101,6 +85,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -226,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Character.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/daos/GenericDao.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -446,12 +440,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591188060908</updated>
-      <workItem from="1591188065182" duration="25212000" />
+      <workItem from="1591188065182" duration="25341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25212000" />
+    <option name="totallyTimeSpent" value="25341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -462,7 +456,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2497332" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32899022" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -472,9 +466,9 @@
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49893278" weight="0.32899022" />
       <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4967983" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4967983" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49893278" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49359658" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="10" sideWeight="0.49359658" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="11" sideWeight="0.49786553" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -869,6 +863,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/daos/GenericDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/LevelElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -893,31 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/daos/GenericDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
         </state>
       </provider>
     </entry>
